@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <h2>step 3. print variable with SpringEL</h2>
+  <ul>singleData
+      <li>${examData.name} = <span th:text="${examData.name}"/></li>
+      <li>${examData['name']} = <span th:text="${examData['name']}"/></li>
+      <li>${examData.getName()} = <span th:text="${examData.getName()}"/></li>
+  </ul>
+  <ul>listData
+      <li>${list[0].name} = <span th:text="${list[0].name}"/></li>
+      <li>${list[1]['name']} = <span th:text="${list[1]['name']}"/></li>
+      <li>${list[2].getName()} = <span th:text="${list[2].getName()}"/></li>
+  </ul>
+  <ul>mapData
+      <li>${map['d1'].name} = <span th:text="${map['d1'].name}"/></li>
+      <li>${map['d2']['name']} = <span th:text="${map['d2']['name']}"/></li>
+      <li>${map['d3'].getName()} = <span th:text="${map['d3'].getName()}"/></li>
+  </ul>
+  <div th:with="local=${list[0]}">
+      <p>first element is <span th:text="${local.name}"></span></p>
+  </div>
+</body>
+</html>

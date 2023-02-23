@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <h2>step 6. URL link</h2>
+  <ul>
+      <li><a th:href="@{/exam}">basic url</a></li>
+      <li><a th:href="@{/exam(param1=${data1}, param2=${data2})}">
+          query param url</a></li>
+      <li><a th:href="@{/exam/{param1}/{param2}(param1=${data1}, param2=${data2})}">
+          path variable</a></li>
+      <li><a th:href="@{/exam/{param1}(param1=${data1}, param2=${data2})}">
+          path variable + query parameter</a></li>
+  </ul>
+</body>
+</html>

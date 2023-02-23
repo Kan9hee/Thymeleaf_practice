@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <h2>step 2. compare escape syntax</h2>
+  <ul>
+    <li>print to use th: <span th:text="${data}"/></li>
+    <li>print to use utext: <span th:utext="${data}"/></li>
+    <li>print in content: [[${data}]]</li>
+    <li>print in content to use [(...)]: [(${data})]</li>
+  </ul>
+</body>
+</html>

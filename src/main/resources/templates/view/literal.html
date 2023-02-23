@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <h2>step 7. literal syntax</h2>
+  <ul>
+      <li>'hello' + ' world!': <span th:text="'hello' + 'world!'"/></li>
+      <li>'hello world!': <span th:text="'hello world!'"/></li>
+      <li>'hello ' + ${data}: <span th:text="'hello ' + ${data}"/></li>
+      <li>literal replace:  <span th:text="|hello ${data}|"/></li>
+  </ul>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <h2>step 4. object syntax</h2>
+  <ul>
+      <li>request = <span th:text="${request}"/></li>
+      <li>response = <span th:text="${response}"/></li>
+      <li>session = <span th:text="${session}"/></li>
+      <li>servletContext = <span th:text="${servletContext}"/></li>
+      <li>locale = <span th:text="${#locale}"/></li>
+      <li>Request Parameter = <span th:text="${param.paramData}"/></li>
+      <li>session = <span th:text="${session.sessionData}"/></li>
+      <li>spring bean = <span th:text="${@examBean.exam('examString')}"/><li>
+  </ul>
+</body>
+</html>
