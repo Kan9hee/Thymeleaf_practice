@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <h2>step 11. condition</h2>
+  <li>if,unless</li>
+  <table border="1">
+      <tr>
+          <th>name</th>
+          <th>num</th>
+      </tr>
+      <tr th:each="data: ${examData}">
+          <td th:text="${data.name}">name</td>
+          <td>
+              <span th:text="${data.num}">0</span>
+              <span th:text="'under'" th:if="${data.num lt 500}"></span>
+              <span th:text="'over'" th:unless="${data.num ge 500}"></span>
+          </td>
+      </tr>
+  </table>
+  <li>table</li>
+  <table border="1">
+      <tr>
+          <th>name</th>
+          <th>num</th>
+      </tr>
+      <tr th:each="data: ${examData}">
+          <td th:text="${data.name}">name</td>
+          <td th:switch="${data.num}">
+              <span th:case="123">data1 num</span>
+              <span th:case="*">else</span>
+          </td>
+      </tr>
+  </table>
+</body>
+</html>

@@ -169,4 +169,13 @@ public class ExamController {
     //          current : 현재 객체
     //          odd, even : 홀수/짝수 확인( boolean )
     //          first, last :처음/마지막 값 확인( boolean )
+
+    @GetMapping("/condition")
+    public String condition(Model model) {
+        addExamData(model);
+        return "view/condition";
+    }
+    // 기존 자바와 비슷한 조건문이다.
+    //      if,under=${조건}
+    //      switch=${배열}, case="조건"
 }
