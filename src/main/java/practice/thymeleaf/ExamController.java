@@ -138,4 +138,13 @@ public class ExamController {
     // 간단한 연산부터 비교연산, 조건식을 제공한다.
     // 엘비스 연산자(?:): 객체가 null일 경우 우측에 설정한 값을 반환한다.
     //                  _를 설정값에 넣을 경우 html의 내용을 반환한다.
+
+    @GetMapping("/attribute")
+    public String attribute(){
+        return "view/attribute";
+    }
+    // xmlns로 설정한 타임리프 네임스페이스명으로 기존 html태그 속성을 대체 가능하다.
+    //      attrappend: 속성값의 뒤에 값을 추가한다. 띄어쓰기에 유의해야 한다.
+    //      attrprepend: 속성값의 앞에 값을 추가한다. 띄어쓰기에 유의해야 한다.
+    //      classappend: class속성에 능동적으로 값을 추가한다.
 }
