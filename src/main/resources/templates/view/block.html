@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <h1>step 12. block</h1>
+    <th:block th:each="data : ${dataList}">
+      <div>
+          data <span th:text="${data.name}"></span>
+          num <span th:text="${data.num}"></span>
+      </div>
+      <div>
+          summary <span th:text="${data.name} + ' / ' + ${data.num}"></span>
+      </div>
+    </th:block>
+</body>
+</html>

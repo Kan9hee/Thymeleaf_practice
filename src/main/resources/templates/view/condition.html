@@ -12,7 +12,7 @@
           <th>name</th>
           <th>num</th>
       </tr>
-      <tr th:each="data: ${examData}">
+      <tr th:each="data: ${dataList}">
           <td th:text="${data.name}">name</td>
           <td>
               <span th:text="${data.num}">0</span>
@@ -27,7 +27,7 @@
           <th>name</th>
           <th>num</th>
       </tr>
-      <tr th:each="data: ${examData}">
+      <tr th:each="data: ${dataList}">
           <td th:text="${data.name}">name</td>
           <td th:switch="${data.num}">
               <span th:case="123">data1 num</span>

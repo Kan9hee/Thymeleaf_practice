@@ -58,17 +58,6 @@ public class ExamController {
 
         return "view/variable";
     }
-
-    @Data
-    static class examData {
-        private String name;
-        private int num;
-
-        public examData(String name, int num) {
-            this.name = name;
-            this.num = num;
-        }
-    }
     // (접근할 모델).get변수명() 을 통해 프로퍼티 접근
     // 위와 동일한 방식들:
     //    (접근할 모델)['변수명']
@@ -153,13 +142,6 @@ public class ExamController {
         addExamData(model);
         return "view/iteration";
     }
-    private void addExamData(Model model){
-        List<examData>list=new ArrayList<>();
-        list.add(new examData("data1",123));
-        list.add(new examData("data2",456));
-        list.add(new examData("data3",789));
-        model.addAttribute("dataList",list);
-    }
     // 타임리프에서는 each를 사용해 반복문으로 사용할 수 있다.
     //      네임스페이스:each="변수명: ${컬렉션}": 컬렉션의 값을 하나씩 꺼내는 것을 반복한다.
     //      네임스페이스:each="변수명,변수명+Stat: ${컬렉션}": 두번째 변수를 통해 반복상태 확인
@@ -176,6 +158,33 @@ public class ExamController {
         return "view/condition";
     }
     // 기존 자바와 비슷한 조건문이다.
-    //      if,under=${조건}
+    //      if,unless=${조건}
     //      switch=${배열}, case="조건"
+
+    @GetMapping("/block")
+    public String block(Model model){
+        addExamData(model);
+        return "view/block";
+    }
+    // 타임리프 고유 태그로, 원하는 속성을 지정할 수 있는 속성 컨테이너다.
+    // 각 요소에 대해 하나 이상의 <tr> 이 필요한 반복 테이블 사용에 유용하다.
+
+    @Data
+    static class examData {
+        private String name;
+        private int num;
+
+        public examData(String name, int num) {
+            this.name = name;
+            this.num = num;
+        }
+    }
+
+    private void addExamData(Model model){
+        List<examData>list=new ArrayList<>();
+        list.add(new examData("data1",123));
+        list.add(new examData("data2",456));
+        list.add(new examData("data3",789));
+        model.addAttribute("dataList",list);
+    }
 }

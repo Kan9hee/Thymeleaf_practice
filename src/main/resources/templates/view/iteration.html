@@ -13,7 +13,7 @@
           <th>num</th>
           <th>etc</th>
       </tr>
-      <tr th:each="data, dataStat : ${examData}">
+      <tr th:each="data, dataStat : ${dataList}">
           <td th:text="${dataStat.count}">count</td>
           <td th:text="${user.name}">name</td>
           <td th:text="${user.num}">0</td>
