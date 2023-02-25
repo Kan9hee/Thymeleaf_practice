@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <h2>step 9. iteration</h2>
+  <table border="1">
+      <tr>
+          <th>count</th>
+          <th>name</th>
+          <th>num</th>
+          <th>etc</th>
+      </tr>
+      <tr th:each="data, dataStat : ${examData}">
+          <td th:text="${dataStat.count}">count</td>
+          <td th:text="${user.name}">name</td>
+          <td th:text="${user.num}">0</td>
+          <td>
+              index = <span th:text="${dataStat.index}"></span>
+              count = <span th:text="${dataStat.count}"></span>
+              size = <span th:text="${dataStat.size}"></span>
+              even? = <span th:text="${dataStat.even}"></span>
+              odd? = <span th:text="${dataStat.odd}"></span>
+              first? = <span th:text="${dataStat.first}"></span>
+              last? = <span th:text="${dataStat.last}"></span>
+              current = <span th:text="${dataStat.current}"></span>
+          </td>
+      </tr>
+  </table>
+</body>
+</html>

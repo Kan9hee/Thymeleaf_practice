@@ -147,4 +147,26 @@ public class ExamController {
     //      attrappend: 속성값의 뒤에 값을 추가한다. 띄어쓰기에 유의해야 한다.
     //      attrprepend: 속성값의 앞에 값을 추가한다. 띄어쓰기에 유의해야 한다.
     //      classappend: class속성에 능동적으로 값을 추가한다.
+
+    @GetMapping("/iteration")
+    public String iteration(Model model){
+        addExamData(model);
+        return "view/iteration";
+    }
+    private void addExamData(Model model){
+        List<examData>list=new ArrayList<>();
+        list.add(new examData("data1",123));
+        list.add(new examData("data2",456));
+        list.add(new examData("data3",789));
+        model.addAttribute("dataList",list);
+    }
+    // 타임리프에서는 each를 사용해 반복문으로 사용할 수 있다.
+    //      네임스페이스:each="변수명: ${컬렉션}": 컬렉션의 값을 하나씩 꺼내는 것을 반복한다.
+    //      네임스페이스:each="변수명,변수명+Stat: ${컬렉션}": 두번째 변수를 통해 반복상태 확인
+    //          index : 0부터 시작하는 값
+    //          count : 1부터 시작하는 값
+    //          size : 전체 사이즈
+    //          current : 현재 객체
+    //          odd, even : 홀수/짝수 확인( boolean )
+    //          first, last :처음/마지막 값 확인( boolean )
 }
