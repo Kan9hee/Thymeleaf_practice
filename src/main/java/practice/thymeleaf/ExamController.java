@@ -169,6 +169,15 @@ public class ExamController {
     // 타임리프 고유 태그로, 원하는 속성을 지정할 수 있는 속성 컨테이너다.
     // 각 요소에 대해 하나 이상의 <tr> 이 필요한 반복 테이블 사용에 유용하다.
 
+    @GetMapping("/inline")
+    public String inline(Model model){
+        model.addAttribute("jsExam",new examData("inline",999));
+        addExamData(model);
+        return "view/inline";
+    }
+    //  변수명 텍스트나 주석을 통한 내추럴 템플릿 기능을 수월히 사용 가능하다.
+    //  객체의 경우, JSON으로 변환해 반환한다.
+
     @Data
     static class examData {
         private String name;
