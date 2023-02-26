@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <h1>step 15. including fragment</h1>
+  <h2>fragment insert</h2>
+    <div th:insert="~{templates/fragment/footer :: copy}"/>
+  <h2>fragment replace</h2>
+    <div th:replace="~{templates/fragment/footer :: copy}"/>
+  <h2>simple including fragment</h2>
+    <div th:replace="templates/fragment/footer :: copy"/>
+  <h1>parameterizable fragment</h1>
+    <div th:replace="~{templates/fragment/footer :: copyParam ('data1', 'data2')}"/>
+</body>
+</html>
