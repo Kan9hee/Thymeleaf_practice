@@ -47,13 +47,20 @@
 
         <div>등록 지역</div>
         <div>
-            <div th:each="region:${regions}" class="form-check form-check-inline">
-                <input type="checkbox" th:field="*{regions}" th:value="${region.key}" class="form-check-inline">
+            <div th:each="region:${region}" class="form-check form-check-inline">
+                <input type="checkbox" th:field="*{regions}" th:value="${region.key}" class="form-check-input">
                 <label th:for="${#ids.prev('regions')}" th:text="${region.value}" class="form-check-label">서울</label>
             </div>
         </div>
         <!--체크박스를 each로 반복해 나열할 경우, 각 체크박스의 id값이 임의로 설정된다.
             타임리프는 ids.prev나 next를 통해 동적으로 id값을 생성시켜 줄 수 있다.-->
+
+        <div>상품 종류</div>
+        <div th:each="type: ${itemTypes}" class="form-check form-check-inline">
+            <input type="radio" th:field="*{itemType}" th:value="${type.name}" class="form-check-input">
+            <label th:for="${#ids.prev('itemType')}" th:text="${type.description}" class="form-check-label">BOOK</label>
+        </div>
+        <!--radio의 경우 히든 필드가 없어 선택하지 않고 넘길 경우 null이 반환된다.-->
 
         <div class="row">
             <div class="col">
