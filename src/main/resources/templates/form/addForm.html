@@ -45,6 +45,16 @@
         <!--웹에 체크박스를 생성한다. 체크시 true 값을 생성한다. 별도 설정 없이 화면에서 체크를 하지 않으면, 값 자체가 생성되지 않는다.
             타임리프의 field는 체크 여부에 따라 자동으로 true/false 값과 checked 값을 생성한다.-->
 
+        <div>등록 지역</div>
+        <div>
+            <div th:each="region:${regions}" class="form-check form-check-inline">
+                <input type="checkbox" th:field="*{regions}" th:value="${region.key}" class="form-check-inline">
+                <label th:for="${#ids.prev('regions')}" th:text="${region.value}" class="form-check-label">서울</label>
+            </div>
+        </div>
+        <!--체크박스를 each로 반복해 나열할 경우, 각 체크박스의 id값이 임의로 설정된다.
+            타임리프는 ids.prev나 next를 통해 동적으로 id값을 생성시켜 줄 수 있다.-->
+
         <div class="row">
             <div class="col">
                 <button class="w-100 btn btn-primary btn-lg" type="submit">상품 등록</button>
