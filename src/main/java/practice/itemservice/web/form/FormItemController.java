@@ -1,6 +1,7 @@
 package practice.itemservice.web.form;
 
 import lombok.extern.slf4j.Slf4j;
+import practice.itemservice.domain.item.DeliveryCode;
 import practice.itemservice.domain.item.Item;
 import practice.itemservice.domain.item.ItemRepository;
 import lombok.RequiredArgsConstructor;
@@ -10,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import practice.itemservice.domain.item.ItemType;
 
+import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -36,6 +38,15 @@ public class FormItemController {
     public ItemType[] itemTypes(){
         return ItemType.values(); //ENUM의 모든 정보를 배열로 반환한다.
     }
+
+    @ModelAttribute("deliveryCodes")
+    public List<DeliveryCode> deliveryCodes(){
+        List<DeliveryCode> deliveryCodes=new ArrayList<>();
+        deliveryCodes.add(new DeliveryCode("FAST","퀵 배송"));
+        deliveryCodes.add(new DeliveryCode("NORMAL","일반 배송"));
+        return deliveryCodes;
+    }
+    // ENUM으로도 여러개의 선택지 중 하나를 선택하도록 할 수 있지만,
 
     @GetMapping
     public String items(Model model) {
